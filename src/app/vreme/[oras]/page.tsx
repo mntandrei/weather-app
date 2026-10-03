@@ -1,7 +1,6 @@
 import VremeaInstanta from "@/app/coponente/VremeaInstanta";
 import Vremea5zile from "@/app/coponente/Vremea5zile";
 import ButonCautaAltOras from "@/app/coponente/ButonCautaAltOras";
-import {redirect} from "next/navigation";
 
 type ParamsProp = {
     params: Promise<{oras: string}>;
