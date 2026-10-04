@@ -23,7 +23,7 @@ export default function Vremea5zile({datePrognoza}: Weather5DaysProps) {
                         key={index} 
                         className="flex flex-col items-center justify-center bg-white/5 border border-white/10 rounded-2xl w-14 h-20 p-2 shadow-lg backdrop-blur-sm transition hover:scale-115 cursor-pointer"
                     >
-                        <span className="text-[10px] font-black text-indigo-200 uppercase tracking-wider select-none capitalize">
+                        <span className="text-[10px] text-white font-black uppercase tracking-wider select-none capitalize">
                             {ziua.zi}
                         </span>
                         <img 

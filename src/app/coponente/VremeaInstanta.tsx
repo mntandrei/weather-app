@@ -34,25 +34,24 @@ export default function VremeaInstanta({ date }: WeatherInstantProps) {
                     <img 
                       src={`https://openweathermap.org/img/wn/${date.weather[0].icon}@2x.png`} 
                       alt={date?.weather?.[0]?.description || "vreme"} 
-                      className="w-16 h-16 drop-shadow-md select-none"
+                      className="w-16 h-16 drop-shadow-md select-none text-white" 
                     />
                   )}
                 </div>
                 <p className="text-sm font-bold text-white mt-3 bg-white/10 px-4 py-1.5 rounded-full border border-white/20 shadow-sm backdrop-blur-sm hover:scale-115 transition">
-                    Se simte ca <span className="text-indigo-200 font-extrabold">{Math.round(date?.main?.feels_like ?? 0)}°C</span>
+                    Se simte ca <span className="text-white font-extrabold ">{Math.round(date?.main?.feels_like ?? 0)}°C</span>
                 </p>
             </div>
-            
             <div className="w-4/5 h-[2px] bg-gradient-to-r from-transparent via-white/50 to-transparent select-none" />
             <div className="flex gap-4 items-center justify-center text-white/90 text-xs font-medium pt-4 w-full hover:scale-102 transition">
-                <p className="font-bold text-indigo-200">
+                <p className="font-bold text-white">
                     {date?.weather?.[0]?.description
                     ? date.weather[0].description.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
                     : "Vreme Indisponibilă"}
                 </p>
-                <span className="text-white/20">•</span> 
+                <span className="text-white/50">•</span> 
                 <p>Umiditate: <span className="font-bold text-white">{date?.main?.humidity || 0}%</span></p>
-                <span className="text-white/20">•</span>
+                <span className="text-white/50">•</span>
                 <p>Vânt: <span className="font-bold text-white">{Math.round((date?.wind?.speed || 0) * 3.6)} km/h</span></p>
             </div>
         </div>
