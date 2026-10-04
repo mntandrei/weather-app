@@ -13,15 +13,24 @@ export default async function PaginaMeteo({params}: ParamsProp) {
 
     const orasCurat = decodeURIComponent(oras).trim();
     const apiLinkInstant = `https://api.openweathermap.org/data/2.5/weather?q=${orasCurat}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric&lang=ro`;
-    const res = await fetch(apiLinkInstant);
-    const dateVreme = await res.json();
+    const resInstant = await fetch(apiLinkInstant);
+    const dateVreme = await resInstant.json();
 
     console.log("=== REZULTAT API ===");
-    console.log("Status HTTP:", res.status);
+    console.log("Status HTTP:", resInstant.status);
     console.log("Ce zice OpenWeather:", dateVreme);
+    console.log("===================="); 
+
+    const apiLink5zile = `https://api.openweathermap.org/data/2.5/forecast?q=${orasCurat}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric&lang=ro`;
+    const res5zile = await fetch(apiLink5zile);
+    const dateVreme5zile = await res5zile.json();
+
+    console.log("=== REZULTAT API ===");
+    console.log("Status HTTP:", res5zile.status);
+    console.log("Ce zice OpenWeather:", dateVreme5zile);
     console.log("====================");    
     
-    if (!res.ok || dateVreme.cod === "404") {
+    if (!resInstant.ok || dateVreme.cod === "404") {
         throw new Error("Orasul nu a fost gasit"); 
     }
 
