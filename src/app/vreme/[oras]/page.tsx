@@ -51,7 +51,7 @@ export default async function PaginaMeteo({params}: ParamsProp) {
     return (
         <main className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-r from-slate-200 to-indigo-500 p-4">
             <div className="flex flex-col items-center justify-center bg-white/5 border border-white/20 rounded-3xl p-5 shadow-2xl backdrop-blur-md gap-3 w-full max-w-md text-white">
-                <h1 className="text-4xl font-black text-white mt-2 drop-shadow-sm mb-4 hover:scale-105 transition">Vremea în {dateVreme?.name || "Oraș Necunoscut"}</h1>
+                <h1 className="text-4xl font-black text-white drop-shadow-sm mb-4 hover:scale-105 transition">Vremea</h1>
                 <Suspense fallback={
                     <div className="flex flex-col items-center justify-center py-6 gap-2">
                         <DotsRing />
