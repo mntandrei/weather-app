@@ -6,15 +6,15 @@ export default function Home() {
 
   async function handleCautare(formData: FormData) {
     'use server';
-    const oras = formData.get("oras");
 
-    if (!oras || typeof oras !== "string") {
-      redirect('/');
-      return;
-    }
+    const orasBrut = formData.get("oras") as string;
 
-    redirect(`/vreme/${oras}`);
-}
+    if (!orasBrut || orasBrut.trim() === "") return;
+
+    const orasCurat = orasBrut.trim();
+    const orasSigurURL = encodeURIComponent(orasCurat);
+    redirect(`/vreme/${orasSigurURL}`);
+  }
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center">
