@@ -44,7 +44,7 @@ export default function VremeaInstanta({ date }: WeatherInstantProps) {
                 <span className="text-white/20">•</span> 
                 <p>Umiditate: <span className="font-bold text-white ">{date?.main?.humidity || "--"}%</span></p>
                 <span className="text-white/20">•</span>
-                <p>Vânt: <span className="font-bold text-white">{Math.round((date?.wind?.speed || 0) * 3.6) } km/h</span></p>
+                <p>Vânt: <span className="font-bold text-white">{Math.round((date?.wind?.speed || 0) * 3.6) || "--"} km/h</span></p>
             </div>
         </div>
     );
