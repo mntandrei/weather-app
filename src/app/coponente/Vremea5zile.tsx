@@ -16,7 +16,7 @@ export default function Vremea5zile({datePrognoza}: Weather5DaysProps) {
             <p className="text-white/80 text-xs font-bold uppercase tracking-widest text-center select-none hover:scale-115 transition">
                 Prognoză următoarele 5 zile
             </p>
-            <div className="w-4/5 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mt-3 mb-4 select-none" />
+            <div className="w-4/5 h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent mt-3 mb-4 select-none" />
             <div className="flex gap-2 justify-between items-center w-full">
                 {datePrognoza.map((ziua, index) => (
                     <div 
