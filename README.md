@@ -1,3 +1,4 @@
-My first Weather App!
-Before working on the app 
+My first Weather App! ⛅<br>
+Before working on the app use ```npm install/npm i``` and make your own .env file.<br>
+Use [OpenWeatherMap Api]([https://github.com/mntandrei/weather-app](https://home.openweathermap.org/api_keys)) for free the Api Key.
 
