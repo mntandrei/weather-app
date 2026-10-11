@@ -16,12 +16,11 @@ type WeatherInstantProps = {
   };
 };
 
-
 export default function CurrentWeather({ data }: WeatherInstantProps) {
   if (!data) return <p className="text-white">No data available.</p>;
 
   return (
-        <div className="flex flex-col items-center justify-center p-6 bg-white/10 rounded-2xl border border-white/20 w-full max-w-sm backdrop-blur-md shadow-2xl mb-2">
+        <div className="flex flex-col items-center justify-center p-6 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/20 dark:border-white/10 w-full max-w-sm backdrop-blur-md shadow-2xl mb-2">
             <div className="text-center mb-6 w-full flex flex-col items-center">
                 <p className="text-white/70 text-xs font-bold uppercase tracking-widest hover:scale-120 transition">
                     Now in {data?.name || "Unknown City"}

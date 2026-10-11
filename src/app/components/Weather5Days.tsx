@@ -12,7 +12,7 @@ export default function Weather5Days({forecastData}: Weather5DaysProps) {
     }
     
     return (
-        <div className="p-5 bg-white/10 rounded-2xl border border-white/30 w-full max-w-sm backdrop-blur-md shadow-2xl flex flex-col items-center">
+        <div className="p-5 bg-white/10 dark:bg-black/20 rounded-2xl border border-white/30 dark:border-white/10 w-full max-w-sm backdrop-blur-md shadow-2xl flex flex-col items-center">
             <p className="text-white/80 text-xs font-bold uppercase tracking-widest text-center select-none hover:scale-115 transition">
                 Next 5 days forecast
             </p>
@@ -27,7 +27,7 @@ export default function Weather5Days({forecastData}: Weather5DaysProps) {
                             {item.day}
                         </span>
                         <img 
-                            src={`https://openweathermap.org/img/wn/${item.icon}.png`} 
+                            src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`} 
                             alt="weather" 
                             className="w-8 h-8 select-none my-0.5"
                         />

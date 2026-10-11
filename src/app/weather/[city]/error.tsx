@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link"; 
+import ThemeToggle from "@/app/components/ThemeToggle"; 
 
 export default function Error({error, reset}: {error: Error, reset: () => void}) {
     useEffect(() => {
@@ -9,8 +10,11 @@ export default function Error({error, reset}: {error: Error, reset: () => void})
     }, [error]);
 
     return (
-        <main className="flex flex-col min-h-screen items-center justify-center bg-gradient-to-r from-slate-200 to-indigo-500 p-4">
-            <div className="flex flex-col items-center justify-center p-6 bg-white/10 rounded-2xl border border-white/30 w-full max-w-sm backdrop-blur-md shadow-2xl">
+        <main className="relative flex flex-col min-h-screen items-center justify-center bg-gradient-to-r from-slate-200 to-indigo-500 dark:from-slate-950 dark:to-indigo-950 transition-colors duration-500 p-4"> 
+            <div className="absolute top-4 right-4 z-50">
+                <ThemeToggle />
+            </div>
+            <div className="flex flex-col items-center justify-center p-6 bg-white/10 dark:bg-black/30 border border-white/30 dark:border-white/10 rounded-3xl w-full max-w-sm backdrop-blur-md shadow-2xl">
                 <h2 className="text-3xl font-bold text-red-600 hover:scale-105 transition">Error</h2>
                 <p className="text-white text-center mt-2 hover:scale-105 transition">City not found or the server is unavailable.</p>
                 <div className="flex gap-2 w-full mt-4">
