@@ -52,8 +52,7 @@ export default async function WeatherPage({ params }: ParamsProp) {
                     </div>
                 }>
                     <WeatherInstant data={weatherData}/>
-                </Suspense>
-                
+                </Suspense>   
                 <Suspense fallback={
                      <div className="flex flex-col items-center justify-center py-6 gap-2">
                         <DotsRing />
@@ -62,7 +61,6 @@ export default async function WeatherPage({ params }: ParamsProp) {
                 }>
                     <Weather5Days forecastData={formattedDays} />
                 </Suspense>
-                
                 <ButtonSearchAnotherCity />
             </div>
         </main>
