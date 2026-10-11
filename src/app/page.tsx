@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
 
-  function handleSearch(e: any) {
+  function handleSearch(e: React.BaseSyntheticEvent) {
     e.preventDefault(); 
     const formData = new FormData(e.currentTarget);
     const rawCity = formData.get("city") as string;
