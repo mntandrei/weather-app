@@ -27,7 +27,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col gap-4 items-center justify-center bg-white/5 dark:bg-black/30 border border-white/20 dark:border-white/10 rounded-3xl p-10 shadow-2xl backdrop-blur-md">
         <h1 className="text-4xl font-bold text-white hover:scale-102 transition">Weather App ⛅</h1>
-        <p className="text-white/70 text-center">Enter a city to get the current weather information.</p>
+        <p className="text-white/70 text-center">Made by Muntianu Andrei</p>
         <form onSubmit={handleSearch} className="flex flex-col gap-3 items-center justify-center w-full max-w-sm">
           <SearchInput />
           <SearchButton />
