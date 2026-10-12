@@ -26,10 +26,9 @@ type ForecastResponse = {
 
 async function WeatherContent({ city }: { city: string }) {
   const currentApiLink = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric&lang=en`;
-
   const forecastApiLink = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric&lang=en`;
 
-  const [resInstant, res5days] = await Promise.all([
+  const [resInstant, res5days] = await Promise.all([ 
     fetch(currentApiLink, {
       next: { revalidate: 900 },
     }),
@@ -37,6 +36,9 @@ async function WeatherContent({ city }: { city: string }) {
       next: { revalidate: 900 },
     }).catch(() => null),
   ]);
+
+  console.log("City received:", city);
+  console.log("Weather API status:", resInstant.status);
 
   if (!resInstant.ok) {
     return (
